@@ -5,7 +5,7 @@ const calculateSquareAndStore = (number, callback) => {
       callback(new TypeError('Argument should be a number'));
     }
     const square = number * number;
-    result.resultArray.push(callback(null, square));
+    callback(null, square);
   });
 };
 
