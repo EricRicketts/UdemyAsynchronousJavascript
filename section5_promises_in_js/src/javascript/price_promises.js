@@ -16,4 +16,10 @@ const askThirdDealer = () => {
   });
 }
 
-export { askFirstDealer, askSecondDealer, askThirdDealer };
+const askFourthDealer = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => reject(new Error('Not a suitable car')), 200);
+  });
+}
+
+export { askFirstDealer, askSecondDealer, askThirdDealer, askFourthDealer };
