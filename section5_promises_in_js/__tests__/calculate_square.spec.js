@@ -22,4 +22,16 @@ describe('Test Promisified Calculate Square', () => {
   it('should test properly using reject', () => {
     return expect(calculateSquare('fizzbuzz')).rejects.toEqual(expectedError);
   });
+
+  it('should test chained promises', () => {
+    return calculateSquare(2).then((result) => {
+      return result;
+    }).then((result) => {
+      return calculateSquare(result);
+    }).then((result) => {
+      return calculateSquare(result);
+    }).then((result) => {
+      expect(result).toBe(256);
+    });
+  });
 });
